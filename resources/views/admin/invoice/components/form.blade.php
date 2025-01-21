@@ -30,20 +30,20 @@
                     {{ $customer->name }}</option>
             @endforeach
         </select>
-        <address>
-            <div id="customerDetails" style="margin-top: 10px; display: none;">
-                <p style="line-height: 5px"><strong>Name:</strong> <span id="customerName"></span></p>
-                <p style="line-height: 5px"><strong>Email:</strong> <span id="customerEmail"></span></p>
-                <p style="line-height: 5px"><strong>Phone:</strong> <span id="customerPhone"></span></p>
-                <p style="line-height: 5px"><strong>Address:</strong> <span id="customerAddress"></span></p>
-            </div>
-        </address>
+       
     </div>
     <!-- /.col -->
     <div class="col-sm-4 invoice-col">
         <b>Invoice No#<input type="text" name="invoice_number" id="invoice_number" style="border:none;" value="{{ $invoice->invoice_number ?? $invoiceNumber }}" required readonly></b>
         <!--<b><p>Invoice No# <span id="invoice_display"></span></p></b> -->
     </div>
+     <br><br>
+        <div id="customerDetails" style="margin-top: 10px; display: none;">
+            <p style="line-height: 5px"><strong>Name:</strong> <span id="customerName"></span></p><br>
+            <p style="line-height: 5px"><strong>Email:</strong> <span id="customerEmail"></span></p><br>
+            <p style="line-height: 5px"><strong>Phone:</strong> <span id="customerPhone"></span></p><br>
+            <p style="line-height: 5px"><strong>Address:</strong> <span id="customerAddress"></span></p><br>
+        </div>
     <!-- /.col -->
 </div>
 <!-- /.row -->
