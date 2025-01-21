@@ -30,7 +30,7 @@ class CustomerController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:customers,email,' . $id,
+            'email' => 'required|email|unique:customers,email,' .strtolower($request->email),
             'phone' => 'required|string|max:15|unique:customers,phone,' . $id,
             'address' => 'required|string|max:500|unique:customers,address,' . $id,
         ], [

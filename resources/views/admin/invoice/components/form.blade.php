@@ -26,11 +26,20 @@
         <select name="customer_id" id="customer_id" class="form-control" data-fetch-url="{{ route('customers.details') }}" data-csrf="{{ csrf_token() }}">
             <option value="">Select a Customer</option>
             @foreach($customers as $customer)
-                <option value="{{ $customer->id }}" {{ $customer->id ? 'selected' : '' }}>
-                    {{ $customer->name }}</option>
+                <option value="{{ $customer->id }}"
+                    {{ isset($invoice) && $invoice->customer_id == $customer->id ? 'selected' : '' }}>
+                    {{ $customer->name }}
+                </option>
             @endforeach
         </select>
-       
+        <address>
+            <div id="customerDetails" style="margin-top: 10px; display: none;">
+                <p style="line-height: 5px"><strong>Name:</strong> <span id="customerName"></span></p>
+                <p style="line-height: 5px"><strong>Email:</strong> <span id="customerEmail"></span></p>
+                <p style="line-height: 5px"><strong>Phone:</strong> <span id="customerPhone"></span></p>
+                <p style="line-height: 5px"><strong>Address:</strong> <span id="customerAddress"></span></p>
+            </div>
+        </address>
     </div>
     <!-- /.col -->
     <div class="col-sm-4 invoice-col">
